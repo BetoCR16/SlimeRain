@@ -10,14 +10,17 @@ import org.bukkit.event.entity.SlimeSplitEvent;
 public class SlimeListener implements Listener {
     @EventHandler
     public void onEntityDamage(SlimeSplitEvent event) {
-        event.setCancelled(true);
+        Entity slime = event.getEntity();
+        if (slime.getCustomName() != null && slime.getCustomName().equals("Slime")){
+            event.setCancelled(true);
+        }
     }
 
     @EventHandler
     public void cancelSlimeFallDamage(EntityDamageEvent event) {
         Entity entity = event.getEntity();
 
-        if (entity instanceof Slime && event.getCause() == EntityDamageEvent.DamageCause.FALL) {
+        if (entity instanceof Slime && entity.getCustomName() != null && entity.getCustomName().equals("Slime") && event.getCause() == EntityDamageEvent.DamageCause.FALL) {
             event.setCancelled(true);
         }
     }

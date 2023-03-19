@@ -1,0 +1,6 @@
+duration: 10 #in seconds
+frequency: 5 #in seconds
+
+messages:
+  start: "&aSlime is falling from the sky!"
+  stop: "&aSlime has stopped falling from the sky."
