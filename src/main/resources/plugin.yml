@@ -3,6 +3,7 @@ main: com.edadimperial.Main
 api-version: 1.19
 name: SlimeRain
 author: EarthKernel
+description: Summons a slime rain
 commands:
   slimerain:
     description: "Manages the slime rain plugin"
